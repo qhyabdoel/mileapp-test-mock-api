@@ -24,6 +24,8 @@ The application demonstrates full CRUD operations for tasks and a basic authenti
 
 ### Frontend (Vue.js)
 
+Repo: https://github.com/qhyabdoel/mileapp-test-frontend
+
 - Login page with token-based mock authentication
 - Protected Task module with full CRUD functionality
 - Clean, responsive UI using Tailwind CSS
