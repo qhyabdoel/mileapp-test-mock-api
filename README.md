@@ -45,8 +45,7 @@ The application demonstrates full CRUD operations for tasks and a basic authenti
 Both the mock API and frontend are deployed for review:
 
 - **Mock API**: [https://mock-api-production.up.railway.app](https://mock-api-production.up.railway.app)
-- **Frontend (Vue)**: _(Add your Vercel or Netlify deployment link here)_
-- **Source Code**: _(Add your GitHub repository link here)_
+- **Frontend (Vue)**: [[_(Add your Vercel or Netlify deployment link here)_](https://mileapp-test-frontend-production.up.railway.app/)]
 
 ---
 
