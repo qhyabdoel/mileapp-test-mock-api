@@ -1,6 +1,6 @@
 # MileApp Fullstack Developer Test
 
-## 🚀 Overview
+## Overview
 
 This project is a **mock Task Management web application** built for the MileApp Fullstack Developer Test.  
 It includes a **Vue.js frontend** and a **Node.js (Express + TypeScript)** backend that serves as a **mock API** (no real database).
@@ -9,7 +9,7 @@ The application demonstrates full CRUD operations for tasks and a basic authenti
 
 ---
 
-## 🧩 Features
+## Features
 
 ### Backend (Mock API)
 
@@ -31,7 +31,7 @@ The application demonstrates full CRUD operations for tasks and a basic authenti
 
 ---
 
-## 🧠 Design Decisions
+## Design Decisions
 
 - **TypeScript** for strong type safety and cleaner code across both frontend and backend
 - **Mock API** to simulate real-world behavior (status codes, validation, and error handling)
@@ -40,7 +40,7 @@ The application demonstrates full CRUD operations for tasks and a basic authenti
 
 ---
 
-## ⚙️ Deployment
+## Deployment
 
 Both the mock API and frontend are deployed for review:
 
@@ -50,7 +50,7 @@ Both the mock API and frontend are deployed for review:
 
 ---
 
-## 🧾 Database Index Design (MongoDB)
+## Database Index Design (MongoDB)
 
 Although this project uses an in-memory mock API, the database design assumes a **MongoDB Task collection**.  
 The following indexes were chosen based on the query patterns used in `/tasks`:
@@ -63,7 +63,7 @@ The following indexes were chosen based on the query patterns used in `/tasks`:
 | `status_createdAt_idx`     | `{ status: 1, createdAt: -1 }` | Speeds up combined filtering and sorting queries           |
 | `createdAt_pagination_idx` | `{ createdAt: -1, _id: 1 }`    | Improves pagination performance when combined with sorting |
 
-### 🧩 Why These Indexes
+### Why These Indexes
 
 - Filtering and sorting are the most frequent queries in the app
 - Compound indexes reduce the need for multiple scans and improve performance for combined filters (`status` + `createdAt`)
@@ -73,7 +73,7 @@ See the full implementation in [`db/indexes.js`](./db/indexes.js)
 
 ---
 
-## 💪 Strengths of the Module
+## Strengths of the Module
 
 - Lightweight and easy-to-deploy **mock API** for frontend integration testing
 - **Realistic API design** — supports pagination, filtering, sorting, and proper HTTP codes
@@ -82,7 +82,7 @@ See the full implementation in [`db/indexes.js`](./db/indexes.js)
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Kiki Abdulloh**  
 Email: [qhyabdoel@gmail.com]  
