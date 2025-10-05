@@ -37,7 +37,6 @@ Repo: https://github.com/qhyabdoel/mileapp-test-frontend
 
 - **TypeScript** for strong type safety and cleaner code across both frontend and backend
 - **Mock API** to simulate real-world behavior (status codes, validation, and error handling)
-- **Modular architecture** that separates routes and logic for scalability
 - **Frontend** designed to easily integrate with different API environments
 
 ---
