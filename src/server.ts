@@ -96,6 +96,17 @@ app.put("/tasks/:id", (req: Request, res: Response) => {
   const idx = tasks.findIndex((t) => t.id === id);
   if (idx === -1) return res.status(404).json({ error: "Task not found" });
 
+  // Basic validation
+  const { title, description, status } = req.body;
+  if (title && typeof title !== "string") {
+    return res
+      .status(400)
+      .json({ error: "Title must be a string if provided" });
+  }
+  if (status && !["pending", "in-progress", "done"].includes(status)) {
+    return res.status(400).json({ error: "Invalid status value" });
+  }
+
   tasks[idx] = { ...tasks[idx], ...req.body };
   res.json(tasks[idx]);
 });
