@@ -68,6 +68,17 @@ app.get("/tasks", (req: Request, res: Response) => {
 // POST /tasks
 app.post("/tasks", (req: Request, res: Response) => {
   const { title, description, status = "pending" } = req.body;
+
+  // Basic validation
+  if (!title || typeof title !== "string") {
+    return res
+      .status(400)
+      .json({ error: "Title is required and must be a string" });
+  }
+  if (!["pending", "in-progress", "done"].includes(status)) {
+    return res.status(400).json({ error: "Invalid status value" });
+  }
+
   const newTask: Task = {
     id: uuidv4(),
     title,
