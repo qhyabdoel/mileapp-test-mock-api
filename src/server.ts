@@ -71,9 +71,7 @@ app.post("/tasks", (req: Request, res: Response) => {
 
   // Basic validation
   if (!title || typeof title !== "string") {
-    return res
-      .status(400)
-      .json({ error: "Title is required and must be a string" });
+    return res.status(400).json({ error: "Title is required" });
   }
   if (!["pending", "in-progress", "done"].includes(status)) {
     return res.status(400).json({ error: "Invalid status value" });
@@ -98,10 +96,8 @@ app.put("/tasks/:id", (req: Request, res: Response) => {
 
   // Basic validation
   const { title, description, status } = req.body;
-  if (title && typeof title !== "string") {
-    return res
-      .status(400)
-      .json({ error: "Title must be a string if provided" });
+  if (!title || typeof title !== "string") {
+    return res.status(400).json({ error: "Title is required" });
   }
   if (status && !["pending", "in-progress", "done"].includes(status)) {
     return res.status(400).json({ error: "Invalid status value" });
